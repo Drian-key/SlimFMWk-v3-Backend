@@ -1,0 +1,14 @@
+{% extends "layout/base.html" %}
+
+{% block title %} Forum Slim Tanya {% endblock %}
+{% block content %} 
+
+    {% for t in tanya %}
+        <h2>Judul: {{t.title}}</h2>
+        <p>{{t.deskripsi}}</p>
+    {% else %}
+        Ngak ada data
+    {% endfor %}
+
+    <a href="{{ path_for('single') }}">Lihat semua forum</a>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "layout/base.html" %}
+
+{% block title %} Forum Slim Coba {% endblock %}
+{% block content %} 
+
+    {% for data in forum %}
+        <ul>
+            <li><a href="{{ path_for('single') }}/{{ data.id }}">{{ data.title }}</a></li>
+        </ul>
+    {% else %}
+        Ngak ada data
+    {% endfor %}
+{% endblock %}
